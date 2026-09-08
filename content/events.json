@@ -74,7 +74,7 @@
       "datum": "2026-10-03",
       "uhrzeit": "23:00",
       "location": "VAYA, Karlsruhe",
-      "flyer": "/assets/flyer/vaya.jpg",
+      "flyer": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KPO_Flyer-Sdt3W7yoZcRIHMqnj1jJ2qNgx4iuxT.png",
       "flyerAspect": "4/5",
       "ticketUrl": "https://luma.com/session010",
       "status": "coming_soon",
