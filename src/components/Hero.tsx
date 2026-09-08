@@ -1,54 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 type HeroProps = {
   logoSrc: string;
   posterSrc: string;
-  videoSrc: string;
   claim: string;
 };
 
-export function Hero({ logoSrc, posterSrc, videoSrc, claim }: HeroProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const conn =
-      // @ts-expect-error Network Information API
-      navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    const slow =
-      conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || ""));
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (slow || reduced) return;
-
-    const loadVideo = () => {
-      video.addEventListener(
-        "canplay",
-        () => {
-          video.classList.add("opacity-100");
-          video.classList.remove("opacity-0");
-          const playPromise = video.play();
-          if (playPromise?.catch) playPromise.catch(() => {});
-        },
-        { once: true },
-      );
-      video.src = videoSrc;
-      video.load();
-    };
-
-    if (document.readyState === "complete") {
-      loadVideo();
-    } else {
-      window.addEventListener("load", loadVideo, { once: true });
-      return () => window.removeEventListener("load", loadVideo);
-    }
-  }, [videoSrc]);
-
+export function Hero({ logoSrc, posterSrc, claim }: HeroProps) {
   return (
     <section
       className="hero relative isolate grid h-[100svh] h-[100dvh] min-h-[100svh] place-items-center overflow-hidden supports-[height:100dvh]:h-[100dvh]"
@@ -62,17 +22,6 @@ export function Hero({ logoSrc, posterSrc, videoSrc, claim }: HeroProps) {
         fetchPriority="high"
         className="hero-media absolute inset-0 -z-20 object-cover grayscale"
         sizes="100vw"
-      />
-      <video
-        ref={videoRef}
-        className="hero-media absolute inset-0 -z-10 h-full w-full object-cover opacity-0 grayscale transition-opacity duration-800"
-        muted
-        loop
-        playsInline
-        autoPlay
-        preload="none"
-        aria-hidden="true"
-        tabIndex={-1}
       />
       <div
         className="pointer-events-none absolute inset-0 z-0"

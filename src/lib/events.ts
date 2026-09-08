@@ -49,7 +49,7 @@ const defaultSettings: SiteSettings = {
   about: siteConfig.about,
   email: siteConfig.email,
   instagram: siteConfig.instagram,
-  heroPoster: "/assets/hero-poster.jpg",
+  heroPoster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kindpeopleonly-hero-light-I5AEeF03udLQKFku2lz0tQUJBz027t.webp",
   heroVideo: "/assets/hero.mp4",
   aboutBg: "/assets/about-bg.jpg",
   logo: "/assets/logo.png",

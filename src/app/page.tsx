@@ -52,7 +52,6 @@ export default async function HomePage() {
         <Hero
           logoSrc={settings.logo}
           posterSrc={settings.heroPoster}
-          videoSrc={settings.heroVideo}
           claim={settings.claim}
         />
         <EventGrid events={events} />
