@@ -8,10 +8,8 @@ type EventCardProps = {
   event: Event;
 };
 
-function flyerSize(aspect: Event["flyerAspect"]) {
-  return aspect === "1/1"
-    ? { width: 800, height: 800, className: "aspect-square" }
-    : { width: 800, height: 1000, className: "aspect-[4/5]" };
+function flyerSize() {
+  return { width: 800, height: 800, className: "aspect-square" };
 }
 
 export function EventCard({ event }: EventCardProps) {
@@ -19,7 +17,7 @@ export function EventCard({ event }: EventCardProps) {
   const comingSoon = event.status === "coming_soon";
   const almostGone = event.status === "letzte_tickets";
   const detailHref = `/events/${event.id}`;
-  const size = flyerSize(event.flyerAspect);
+  const size = flyerSize();
 
   return (
     <li

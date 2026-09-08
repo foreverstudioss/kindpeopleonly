@@ -7,7 +7,6 @@ type FooterProps = {
 };
 
 export function Footer({
-  email = siteConfig.email,
   instagram = siteConfig.instagram,
 }: FooterProps) {
   return (
@@ -25,12 +24,12 @@ export function Footer({
           >
             Instagram
           </a>
-          <a
-            href={`mailto:${email}`}
+          <Link
+            href="/kontakt"
             className="inline-flex min-h-11 items-center text-[0.9rem] font-light text-ink opacity-85 transition-opacity hover:opacity-100"
           >
             Contact
-          </a>
+          </Link>
           <Link
             href="/impressum"
             className="inline-flex min-h-11 items-center text-[0.9rem] font-light text-ink opacity-85 transition-opacity hover:opacity-100"
