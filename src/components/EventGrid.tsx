@@ -31,7 +31,7 @@ export function EventGrid({ events }: EventGridProps) {
         Upcoming Events
       </h2>
       {upcoming.length > 0 ? (
-        <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(min(300px,100%),1fr))] gap-x-[clamp(1.5rem,3vw,2rem)] gap-y-[clamp(2rem,4vw,2.75rem)] p-0 max-md:gap-y-12">
+        <ul className="m-0 grid list-none grid-cols-2 gap-x-3 gap-y-12 p-0 md:grid-cols-[repeat(auto-fill,minmax(min(300px,100%),1fr))] md:gap-x-[clamp(1.5rem,3vw,2rem)] md:gap-y-[clamp(2rem,4vw,2.75rem)]">
           {upcoming.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
@@ -45,7 +45,7 @@ export function EventGrid({ events }: EventGridProps) {
           <h2 className="mb-[clamp(2rem,5vw,3.5rem)] font-display text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[0.98] uppercase">
             Past Events
           </h2>
-          <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(min(300px,100%),1fr))] gap-x-[clamp(1.5rem,3vw,2rem)] gap-y-[clamp(2rem,4vw,2.75rem)] p-0 max-md:gap-y-12">
+          <ul className="m-0 grid list-none grid-cols-2 gap-x-3 gap-y-12 p-0 md:grid-cols-[repeat(auto-fill,minmax(min(300px,100%),1fr))] md:gap-x-[clamp(1.5rem,3vw,2rem)] md:gap-y-[clamp(2rem,4vw,2.75rem)]">
             {past.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}

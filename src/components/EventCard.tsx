@@ -23,7 +23,7 @@ export function EventCard({ event }: EventCardProps) {
 
   return (
     <li
-      className={`flex h-full flex-col max-md:mx-auto max-md:w-full max-md:max-w-[360px] max-md:[&+&]:border-t max-md:[&+&]:border-[color-mix(in_srgb,var(--accent)_38%,transparent)] max-md:[&+&]:pt-11 ${
+      className={`flex h-full flex-col ${
         soldOut ? "opacity-90" : ""
       }`}
     >
