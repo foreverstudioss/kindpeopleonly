@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Event } from "@/lib/types";
 import { formatEventDate } from "@/lib/format";
-import { TicketIcon } from "@/components/TicketIcon";
+import { EventTicketButton } from "@/components/EventTicketButton";
 
 type EventCardProps = {
   event: Event;
@@ -82,25 +82,12 @@ export function EventCard({ event }: EventCardProps) {
             <span className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-line px-6 text-[0.8rem] font-bold uppercase text-muted">
               Sold Out
             </span>
-          ) : comingSoon ? (
-            <span
-              aria-disabled="true"
-              className="inline-flex min-h-11 flex-1 cursor-default items-center justify-center gap-2 rounded-full border border-line bg-[rgba(242,240,236,0.06)] px-6 text-[0.8rem] font-bold uppercase text-muted opacity-70"
-            >
-              <TicketIcon className="h-[17px] w-[17px] shrink-0 opacity-60" />
-              Coming Soon
-            </span>
           ) : (
-            <a
+            <EventTicketButton
               href={event.ticketUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              data-ticket
-              className="btn-accent inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full px-6 text-[0.8rem] font-bold uppercase"
-            >
-              <TicketIcon className="h-[17px] w-[17px] shrink-0" />
-              Tickets
-            </a>
+              eventId={event.id}
+              comingSoon={comingSoon}
+            />
           )}
           <Link
             href={detailHref}
