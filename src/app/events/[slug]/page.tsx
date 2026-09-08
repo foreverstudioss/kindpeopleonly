@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { TicketIcon } from "@/components/TicketIcon";
+import { EventTicketButton } from "@/components/EventTicketButton";
 import { EventJsonLd } from "@/components/JsonLd";
 import { TicketPreconnect } from "@/components/TicketPreconnect";
 import { getEventBySlug, getEvents, getSettings } from "@/lib/events";
@@ -158,25 +158,12 @@ export default async function EventPage({ params }: PageProps) {
               <p className="m-0 inline-flex min-h-[52px] items-center rounded-full border border-line px-9 text-[0.85rem] font-bold uppercase text-muted">
                 Sold Out
               </p>
-            ) : comingSoon ? (
-              <p
-                aria-disabled="true"
-                className="m-0 inline-flex min-h-[52px] cursor-default items-center gap-2 rounded-full border border-line bg-[rgba(242,240,236,0.06)] px-9 text-[0.85rem] font-bold uppercase text-muted opacity-70"
-              >
-                <TicketIcon className="h-[17px] w-[17px] shrink-0 opacity-60" />
-                Coming Soon
-              </p>
             ) : (
-              <a
+              <EventTicketButton
                 href={event.ticketUrl}
-                rel="noopener noreferrer"
-                target="_blank"
-                data-ticket
-                className="btn-accent inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-9 text-[0.85rem] font-bold uppercase"
-              >
-                <TicketIcon className="h-[17px] w-[17px] shrink-0" />
-                Get Tickets
-              </a>
+                eventId={event.id}
+                comingSoon={comingSoon}
+              />
             )}
 
             {facts.length > 0 && (

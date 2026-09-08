@@ -57,7 +57,11 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
   if (isHirschhof) {
     const active = cooldown !== null;
     return (
-      <button
+      <div className="flex min-w-0 flex-1 flex-col gap-2">
+        <p className="text-[0.68rem] font-semibold uppercase leading-tight tracking-[0.08em] text-muted">
+          Enter password “KPO” for access to the ticket shop.
+        </p>
+        <button
         type="button"
         onClick={handleHirschhofClick}
         disabled={active}
@@ -80,7 +84,8 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
             <span>Tickets</span>
           </>
         )}
-      </button>
+        </button>
+      </div>
     );
   }
 
