@@ -62,7 +62,7 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
         onClick={handleHirschhofClick}
         disabled={active}
         aria-live="polite"
-        className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border px-4 text-[0.8rem] font-bold uppercase transition-colors duration-200 sm:flex-1 sm:px-6 ${active ? "border-ink bg-background text-ink" : "btn-accent hover:-translate-y-0.5"}`}
+        className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border px-3 text-[0.68rem] font-bold uppercase transition-colors duration-200 sm:flex-1 sm:px-6 sm:text-[0.8rem] ${active ? "border-ink bg-background text-ink" : "btn-accent hover:-translate-y-0.5"}`}
       >
         {active ? (
           <>
@@ -70,7 +70,7 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
               <span className="absolute inset-0 rounded-sm border-2 border-current" />
               <span className="absolute -bottom-1 -right-1 h-3 w-3 rounded-sm border-2 border-current bg-background" />
             </span>
-            <span className="text-[0.68rem] tracking-[0.08em]">
+            <span className="text-[0.58rem] tracking-[0.05em] sm:text-[0.68rem]">
               {copied ? `Enter “KPO” password · ${cooldown}s` : "Enter “KPO” password"}
             </span>
           </>

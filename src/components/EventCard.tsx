@@ -79,7 +79,7 @@ export function EventCard({ event }: EventCardProps) {
 
         <div className="mt-4 flex flex-col gap-3">
           {event.id === "summer-closing-2026" && !soldOut && (
-            <p className="max-w-[34rem] text-[0.68rem] font-semibold uppercase leading-[1.35] tracking-[0.08em] text-muted sm:text-[0.72rem]">
+            <p className="max-w-[34rem] text-[0.58rem] font-semibold uppercase leading-[1.3] tracking-[0.06em] text-muted sm:text-[0.68rem]">
               Enter password “KPO” for access to the ticket shop.
             </p>
           )}
@@ -97,7 +97,7 @@ export function EventCard({ event }: EventCardProps) {
           )}
           <Link
             href={detailHref}
-            className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[rgba(242,240,236,0.28)] bg-transparent px-[1.4rem] text-[0.8rem] font-semibold uppercase text-ink transition-[border-color,background-color] duration-200 hover:border-[rgba(242,240,236,0.6)] hover:bg-[rgba(242,240,236,0.05)] sm:w-auto"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[rgba(242,240,236,0.28)] bg-transparent px-[1.2rem] text-[0.68rem] font-semibold uppercase text-ink transition-[border-color,background-color] duration-200 hover:border-[rgba(242,240,236,0.6)] hover:bg-[rgba(242,240,236,0.05)] sm:w-auto sm:text-[0.8rem]"
           >
             More Info
             <span className="visually-hidden">: {event.titel}</span>
