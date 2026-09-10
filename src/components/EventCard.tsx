@@ -77,7 +77,13 @@ export function EventCard({ event }: EventCardProps) {
           </span>
         </Link>
 
-        <div className="mt-4 flex flex-wrap items-center gap-[0.6rem]">
+        <div className="mt-4 flex flex-col gap-3">
+          {event.id === "summer-closing-2026" && !soldOut && (
+            <p className="max-w-[34rem] text-[0.68rem] font-semibold uppercase leading-[1.35] tracking-[0.08em] text-muted sm:text-[0.72rem]">
+              Enter password “KPO” for access to the ticket shop.
+            </p>
+          )}
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-[0.6rem]">
           {soldOut ? (
             <span className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-line px-6 text-[0.8rem] font-bold uppercase text-muted">
               Sold Out
@@ -91,11 +97,12 @@ export function EventCard({ event }: EventCardProps) {
           )}
           <Link
             href={detailHref}
-            className="inline-flex min-h-11 items-center rounded-full border border-[rgba(242,240,236,0.28)] bg-transparent px-[1.4rem] text-[0.8rem] font-semibold uppercase text-ink transition-[border-color,background-color] duration-200 hover:border-[rgba(242,240,236,0.6)] hover:bg-[rgba(242,240,236,0.05)]"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[rgba(242,240,236,0.28)] bg-transparent px-[1.4rem] text-[0.8rem] font-semibold uppercase text-ink transition-[border-color,background-color] duration-200 hover:border-[rgba(242,240,236,0.6)] hover:bg-[rgba(242,240,236,0.05)] sm:w-auto"
           >
             More Info
             <span className="visually-hidden">: {event.titel}</span>
           </Link>
+          </div>
         </div>
       </div>
     </li>

@@ -159,11 +159,18 @@ export default async function EventPage({ params }: PageProps) {
                 Sold Out
               </p>
             ) : (
-              <EventTicketButton
-                href={event.ticketUrl}
-                eventId={event.id}
-                comingSoon={comingSoon}
-              />
+              <div className="flex max-w-[34rem] flex-col gap-3">
+                {event.id === "summer-closing-2026" && (
+                  <p className="text-[0.68rem] font-semibold uppercase leading-[1.35] tracking-[0.08em] text-muted sm:text-[0.72rem]">
+                    Enter password “KPO” for access to the ticket shop.
+                  </p>
+                )}
+                <EventTicketButton
+                  href={event.ticketUrl}
+                  eventId={event.id}
+                  comingSoon={comingSoon}
+                />
+              </div>
             )}
 
             {facts.length > 0 && (

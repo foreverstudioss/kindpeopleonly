@@ -57,16 +57,12 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
   if (isHirschhof) {
     const active = cooldown !== null;
     return (
-      <div className="flex min-w-0 flex-1 flex-col gap-2">
-        <p className="text-[0.68rem] font-semibold uppercase leading-tight tracking-[0.08em] text-muted">
-          Enter password “KPO” for access to the ticket shop.
-        </p>
-        <button
+      <button
         type="button"
         onClick={handleHirschhofClick}
         disabled={active}
         aria-live="polite"
-        className={`inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border px-6 text-[0.8rem] font-bold uppercase transition-colors duration-200 ${active ? "border-ink bg-background text-ink" : "btn-accent hover:-translate-y-0.5"}`}
+        className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border px-4 text-[0.8rem] font-bold uppercase transition-colors duration-200 sm:flex-1 sm:px-6 ${active ? "border-ink bg-background text-ink" : "btn-accent hover:-translate-y-0.5"}`}
       >
         {active ? (
           <>
@@ -84,8 +80,7 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
             <span>Tickets</span>
           </>
         )}
-        </button>
-      </div>
+      </button>
     );
   }
 
