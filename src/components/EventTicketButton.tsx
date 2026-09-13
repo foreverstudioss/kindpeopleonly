@@ -6,10 +6,9 @@ import { TicketIcon } from "@/components/TicketIcon";
 type EventTicketButtonProps = {
   href: string;
   eventId: string;
-  comingSoon?: boolean;
 };
 
-export function EventTicketButton({ href, eventId, comingSoon = false }: EventTicketButtonProps) {
+export function EventTicketButton({ href, eventId }: EventTicketButtonProps) {
   const isHirschhof = eventId === "summer-closing-2026";
   const [cooldown, setCooldown] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
@@ -37,21 +36,6 @@ export function EventTicketButton({ href, eventId, comingSoon = false }: EventTi
 
     setCopied(true);
     setCooldown(3);
-  }
-
-  if (comingSoon && !isHirschhof) {
-    return (
-      <a
-        href={href}
-        rel="noopener noreferrer"
-        target="_blank"
-        data-ticket
-        className="btn-accent inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full px-6 text-[0.8rem] font-bold uppercase"
-      >
-        <TicketIcon className="h-[17px] w-[17px] shrink-0" />
-        Tickets
-      </a>
-    );
   }
 
   if (isHirschhof) {

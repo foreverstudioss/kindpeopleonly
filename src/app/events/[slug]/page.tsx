@@ -65,7 +65,6 @@ export default async function EventPage({ params }: PageProps) {
   if (!event) notFound();
 
   const soldOut = event.status === "ausverkauft";
-  const comingSoon = event.status === "coming_soon";
   const almostGone = event.status === "letzte_tickets";
   const facts = [
     { label: "Doors", value: event.uhrzeit },
@@ -81,7 +80,7 @@ export default async function EventPage({ params }: PageProps) {
 
   return (
     <>
-      {event.ticketUrl && !comingSoon && !soldOut && (
+      {event.ticketUrl && !soldOut && (
         <>
           <link rel="preconnect" href={new URL(event.ticketUrl).origin} />
           <link rel="dns-prefetch" href={new URL(event.ticketUrl).origin} />
@@ -137,11 +136,6 @@ export default async function EventPage({ params }: PageProps) {
                 Almost Sold Out
               </span>
             )}
-            {comingSoon && (
-              <span className="mb-4 inline-flex items-center rounded-full border border-line px-[0.85rem] py-[0.35rem] text-[0.7rem] font-bold uppercase text-muted">
-                Coming Soon
-              </span>
-            )}
             {soldOut && (
               <span className="mb-4 inline-flex items-center rounded-full border border-line px-[0.85rem] py-[0.35rem] text-[0.7rem] font-bold uppercase text-muted">
                 Sold Out
@@ -168,7 +162,6 @@ export default async function EventPage({ params }: PageProps) {
                 <EventTicketButton
                   href={event.ticketUrl}
                   eventId={event.id}
-                  comingSoon={comingSoon}
                 />
               </div>
             )}

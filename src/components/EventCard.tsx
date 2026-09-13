@@ -14,7 +14,6 @@ function flyerSize() {
 
 export function EventCard({ event }: EventCardProps) {
   const soldOut = event.status === "ausverkauft";
-  const comingSoon = event.status === "coming_soon";
   const almostGone = event.status === "letzte_tickets";
   const detailHref = `/events/${event.id}`;
   const size = flyerSize();
@@ -45,11 +44,6 @@ export function EventCard({ event }: EventCardProps) {
           {almostGone && (
             <span className="absolute top-[0.9rem] left-[0.9rem] rounded-full bg-accent px-[0.85rem] py-[0.35rem] text-[0.7rem] font-bold uppercase text-accent-ink">
               Almost Sold Out
-            </span>
-          )}
-          {comingSoon && (
-            <span className="absolute top-[0.9rem] left-[0.9rem] rounded-full bg-[rgba(14,13,18,0.75)] px-[0.85rem] py-[0.35rem] text-[0.7rem] font-bold uppercase text-ink backdrop-blur-sm">
-              Coming Soon
             </span>
           )}
           {soldOut && (
@@ -92,7 +86,6 @@ export function EventCard({ event }: EventCardProps) {
             <EventTicketButton
               href={event.ticketUrl}
               eventId={event.id}
-              comingSoon={comingSoon}
             />
           )}
           <Link
