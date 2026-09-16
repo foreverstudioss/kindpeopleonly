@@ -1,6 +1,23 @@
 {
   "events": [
     {
+      "id": "session-005",
+      "titel": "Session 005",
+      "datum": "2026-03-07",
+      "uhrzeit": "23:00",
+      "location": "Eat and Greet, Karlsruhe",
+      "flyer": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FlyerV5-98WuxMckO7F5TOtXpnJTkRrsC6Cv7Z.jpeg",
+      "flyerAspect": "1/1",
+      "ticketUrl": "https://luma.com/session005",
+      "status": "ausverkauft",
+      "info": "house music and more – forever x kindpeopleonly. house music all night, no bad energy, drinks & cocktails, free shots. no door sales.",
+      "musik": "house music all night",
+      "lineup": "forever x kindpeopleonly",
+      "einlass": "18+",
+      "preis": "Registration closed",
+      "adresse": "Alter Schlachthof 7a, 76131 Karlsruhe"
+    },
+    {
       "id": "session-006",
       "titel": "Session 006",
       "datum": "2026-05-16",
