@@ -143,7 +143,7 @@ export default async function EventPage({ params }: PageProps) {
             )}
 
             {event.info && (
-              <p className="mb-6 max-w-[44ch] text-[clamp(1rem,1.8vw,1.15rem)] font-light leading-[1.7]">
+              <p className="mb-6 max-w-[44ch] whitespace-pre-line text-[clamp(1rem,1.8vw,1.15rem)] font-light leading-[1.7]">
                 {event.info}
               </p>
             )}
